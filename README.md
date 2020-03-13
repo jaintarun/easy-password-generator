@@ -5,8 +5,10 @@ This chrome add-in can be used to generate human readable passwords. The issue i
  2. [1Password generator](https://1password.com/password-generator/)
  3. [Dashlane generator](https://www.dashlane.com/features/password-generator)
 
-1Password comes closest but the passwords are too long
+1Password comes closest with its "Memorable Password" but the passwords are too long.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIzMzE2MDczLDE5MTk4NTk3NTMsLTIwOT
-M2NDQ0NThdfQ==
+eyJoaXN0b3J5IjpbLTM4MTc4Mjk5MCwxOTE5ODU5NzUzLC0yMD
+kzNjQ0NDU4XX0=
 -->
