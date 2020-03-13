@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="../../css/custom.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="mainPopup">
+        <div id="title">Easy-To-Remember Password</div>
+        <div id="generatedPwdDiv">
+            <span id="generatedPwd"></span>
+        </div>
+
+        <div class="pwdRow">
+            <label class="pwdLabel" for="pwdLength">Password Length:</label>
+            <input id="pwdLength" class="pwdTextInput" type="number" value="10" min="8" max="15" />
+        </div>
+
+        <div class="pwdRow">
+            <label class="pwdLabel" for="useNumbers">Use numbers:</label>
+            <input id="useNumbers" type="checkbox" />
+
+        </div>
+        <div class="pwdRow">
+            <label class="pwdLabel" for="addSymbols">Use symbols:</label>
+            <input id="addSymbols" type="checkbox" />
+        </div>
+        <div class="pwdRow">
+            <label class="pwdLabel" for="symbols">Symbols:</label>
+            <input id="symbols" class="pwdTextInput" type="text" value="!@#$%^&*" />
+        </div>
+
+        <br />
+        <div>
+            <input id="btnGenerateNew" value="Generate" type="button" />&nbsp;&nbsp;&nbsp;
+            <input id="btnCopy" value="Copy to clipboard" type="button" />&nbsp;&nbsp;&nbsp;
+            <span id="copiedMsg" style="display: none; font-weight: bold;"></span>
+        </div>
+    </div>
+
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+    <script src="pwd.js"></script>
+</body>
+</html>
