@@ -16,12 +16,12 @@ This chrome add-in can be used to generate human readable passwords. The issue i
 		 - *xf8mbrXp$.
 		 - *yMn'!d"h8E
 
-1Password comes closest with its "Memorable Password" but the passwords are too long.
-Sure the passwords are secure but I think we can do better. 
+1Password comes closest with its "Memorable Password" but the password is too long. Sure the passwords are secure but I think we can do better. 
+
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDQ1MjEyMzUsLTM4MTc4Mjk5MCwxOT
-E5ODU5NzUzLC0yMDkzNjQ0NDU4XX0=
+eyJoaXN0b3J5IjpbMTg1MDY5NDA5OCwtMzgxNzgyOTkwLDE5MT
+k4NTk3NTMsLTIwOTM2NDQ0NThdfQ==
 -->
