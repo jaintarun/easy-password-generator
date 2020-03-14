@@ -7,8 +7,14 @@ This chrome add-in can be used to generate human readable passwords. The issue i
 		 - *oP6RWYmaVif  	
  2. [1Password generator](https://1password.com/password-generator/)
 	 - Example:
+		 - P52QvT5rpWo
 		 - adroit-solvency-heaven 
+		 - lithium-almost-whom
  3. [Dashlane generator](https://www.dashlane.com/features/password-generator)
+	 - Example:
+		 - ~6R"N#M'FFt 
+		 - *xf8mbrXp$.
+
 
 1Password comes closest with its "Memorable Password" but the passwords are too long.
 
@@ -19,6 +25,6 @@ Compared to this
  - 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMDI4NTAyMCwtMzgxNzgyOTkwLDE5MT
-k4NTk3NTMsLTIwOTM2NDQ0NThdfQ==
+eyJoaXN0b3J5IjpbLTIxMjUzMzMzMjMsLTM4MTc4Mjk5MCwxOT
+E5ODU5NzUzLC0yMDkzNjQ0NDU4XX0=
 -->
