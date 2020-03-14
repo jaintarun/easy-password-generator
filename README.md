@@ -19,7 +19,9 @@ This chrome add-in can be used to generate human readable passwords. The issue i
 1Password comes closest with its "Memorable Password" but the passwords are too long.
 Sure the passwords are secure but I think we can do better. 
 
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NDk3OTAzLC0zODE3ODI5OTAsMTkxOT
-g1OTc1MywtMjA5MzY0NDQ1OF19
+eyJoaXN0b3J5IjpbLTE5MDQ1MjEyMzUsLTM4MTc4Mjk5MCwxOT
+E5ODU5NzUzLC0yMDkzNjQ0NDU4XX0=
 -->
