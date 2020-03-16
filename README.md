@@ -22,12 +22,10 @@ All popular password managers like LastPass, 1Password, Dashlane have password g
 
 # Installation
 Link to chrome store. Try it now!
-[Easy-Remember-Password chrome add-on](https://chrome.google.com/webstore/detail/easy-to-remember-password/ghjkkmcnhfbkboghadcdemdkapnfiddp?hl=en){:target="_blank"}
-
-<a href="" target="_blank">Hello, world!</a>
+<a href="https://chrome.google.com/webstore/detail/easy-to-remember-password/ghjkkmcnhfbkboghadcdemdkapnfiddp?hl=en" target="_blank">Easy-Remember-Password chrome add-on</a>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MjEyOTMzNywtMTgyMDM5OSwxMDg1NT
+eyJoaXN0b3J5IjpbMTIxOTMyMDE5OCwtMTgyMDM5OSwxMDg1NT
 gwODI3LDIwNzExOTUxMDYsODkzMzI4MTE1LDE4NTA2OTQwOTgs
 LTM4MTc4Mjk5MCwxOTE5ODU5NzUzLC0yMDkzNjQ0NDU4XX0=
 -->
