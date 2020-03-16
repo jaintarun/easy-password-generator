@@ -1,7 +1,7 @@
 # A easy-to-remember password generator chrome add-in
 This chrome add-in can be used to generate human readable passwords. Like a lot of people I was using a few common passwords on a lot of sites which is a really bad security practice. I needed passwords which I could remember.
 
-The issue this ass-in tries to solve is that the random password generators online produce passwords that can never be memorized or communicated. All popular password managers like LastPass, 1Password, Dashlane have password generators but generate unreadable passwords
+All popular password managers like LastPass, 1Password, Dashlane have password generators but generate unreadable passwords
 
  1. [LastPass generator](https://www.lastpass.com/password-generator)
 	 - Example: 
@@ -24,7 +24,7 @@ The issue this ass-in tries to solve is that the random password generators onli
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NTU4MDgyNywyMDcxMTk1MTA2LDg5Mz
-MyODExNSwxODUwNjk0MDk4LC0zODE3ODI5OTAsMTkxOTg1OTc1
-MywtMjA5MzY0NDQ1OF19
+eyJoaXN0b3J5IjpbLTE1NDY1MTQ1OCwxMDg1NTgwODI3LDIwNz
+ExOTUxMDYsODkzMzI4MTE1LDE4NTA2OTQwOTgsLTM4MTc4Mjk5
+MCwxOTE5ODU5NzUzLC0yMDkzNjQ0NDU4XX0=
 -->
