@@ -20,11 +20,13 @@ All popular password managers like LastPass, 1Password, Dashlane have password g
 
 1Password comes closest with its "Memorable Password" but the password is too long. Sure the passwords are secure but I think we can do better. 
 
-
+# Installation
+Link to chrome store. Try it now!
+[Easy-Remember-Password]([https://chrome.google.com/webstore/detail/easy-to-remember-password/ghjkkmcnhfbkboghadcdemdkapnfiddp?hl=en](https://chrome.google.com/webstore/detail/easy-to-remember-password/ghjkkmcnhfbkboghadcdemdkapnfiddp?hl=en))
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDY1MTQ1OCwxMDg1NTgwODI3LDIwNz
+eyJoaXN0b3J5IjpbLTQ4NTAxNDI2MCwxMDg1NTgwODI3LDIwNz
 ExOTUxMDYsODkzMzI4MTE1LDE4NTA2OTQwOTgsLTM4MTc4Mjk5
 MCwxOTE5ODU5NzUzLC0yMDkzNjQ0NDU4XX0=
 -->
