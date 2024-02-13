@@ -1,10 +1,6 @@
 $(function () {
-    $('#btnGenerateNew').click(function () {
-        generateNewPassword(false);
-    });
-
+    $('#btnGenerateNew').click(generateNewPassword);
     $('#btnCopy').click(copyPasswordToClipboard);
-
     $("#useNumbers,#addSymbols").click(uiChanged);
     $("#pwdLength,#symbols").change(uiChanged);
 });
@@ -16,11 +12,7 @@ function uiChanged() {
     UiState.useSymbols = $("#addSymbols").is(":checked");
 
     var toSave = JSON.stringify(UiState);
-
-    chrome.storage.local.set({ 'easyToRememberPwd_UiState': toSave }, function () {
-        //chrome.extension.getBackgroundPage().console.log('Saved = ' + toSave);
-    });
-
+    chrome.storage.local.set({ 'easyToRememberPwd_UiState': toSave }, function () {});
 }
 
 function getQuery() {
@@ -33,15 +25,13 @@ function getQuery() {
     return toReturn;
 }
 
-function generateNewPassword(copyToClipboard) {
+function generateNewPassword() {
     var x = new XMLHttpRequest();
     var query = getQuery();
-    x.open('GET', 'https://pwd.bigbingobot.com/api/getpassword' + query);
+    x.open('GET', 'https://pwd.razorsedgeconsulting.com/api/getpassword' + query);
     x.onload = function () {
         document.getElementById('generatedPwd').innerHTML = x.responseText;
-        if (copyToClipboard) {
-            copyPasswordToClipboard();
-        }
+        copyPasswordToClipboard();
     };
     x.send();
 }
@@ -56,14 +46,8 @@ function copyPasswordToClipboard() {
     });
 }
 
-function copyTextToClipboard(text) {
-    var copyFrom = document.createElement("textarea");
-    copyFrom.textContent = text;
-    document.body.appendChild(copyFrom);
-    copyFrom.select();
-    document.execCommand('copy');
-    copyFrom.blur();
-    document.body.removeChild(copyFrom);
+async function copyTextToClipboard(text) {
+    await navigator.clipboard.writeText(text);
 }
 
 //defaults
@@ -75,9 +59,7 @@ UiState = {
 }
 
 function initializeOptions() {
-
     chrome.storage.local.get('easyToRememberPwd_UiState', function (result) {
-
         if (!jQuery.isEmptyObject(result)) {
             UiState = JSON.parse(result['easyToRememberPwd_UiState']);
         } 
@@ -88,12 +70,9 @@ function initializeOptions() {
         $("#symbols").val(UiState.symbols);
 
         generateNewPassword(true);
-
     });
 }
 
 document.addEventListener('DOMContentLoaded', function () { 
     initializeOptions();
 });
-
-
