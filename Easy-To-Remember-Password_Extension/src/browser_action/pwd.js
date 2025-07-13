@@ -1,78 +1,83 @@
-$(function () {
-    $('#btnGenerateNew').click(generateNewPassword);
-    $('#btnCopy').click(copyPasswordToClipboard);
-    $("#useNumbers,#addSymbols").click(uiChanged);
-    $("#pwdLength,#symbols").change(uiChanged);
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("btnGenerateNew")
+    .addEventListener("click", generateNewPassword);
+  document
+    .getElementById("btnCopy")
+    .addEventListener("click", copyPasswordToClipboard);
+  document.getElementById("useNumbers").addEventListener("click", uiChanged);
+  document.getElementById("addSymbols").addEventListener("click", uiChanged);
+  document.getElementById("pwdLength").addEventListener("change", uiChanged);
+  document.getElementById("symbols").addEventListener("change", uiChanged);
+
+  initializeOptions();
 });
 
 function uiChanged() {
-    UiState.minimumLength = $("#pwdLength").val();
-    UiState.symbols = $("#symbols").val();
-    UiState.useNumbers = $("#useNumbers").is(":checked");
-    UiState.useSymbols = $("#addSymbols").is(":checked");
+  UiState.minimumLength = document.getElementById("pwdLength").value;
+  UiState.symbols = document.getElementById("symbols").value;
+  UiState.useNumbers = document.getElementById("useNumbers").checked;
+  UiState.useSymbols = document.getElementById("addSymbols").checked;
 
-    var toSave = JSON.stringify(UiState);
-    chrome.storage.local.set({ 'easyToRememberPwd_UiState': toSave }, function () {});
-}
-
-function getQuery() {
-    var toReturn = "?";
-    toReturn += "minLen=" + $("#pwdLength").val();
-    toReturn += "&numbers=" + $("#useNumbers").is(":checked");
-    toReturn += "&addSymbols=" + $("#addSymbols").is(":checked");
-    toReturn += "&symbols=" + encodeURI($("#symbols").val());
-
-    return toReturn;
+  var toSave = JSON.stringify(UiState);
+  chrome.storage.local.set(
+    { easyToRememberPwd_UiState: toSave },
+    function () {}
+  );
 }
 
 function generateNewPassword() {
-    var x = new XMLHttpRequest();
-    var query = getQuery();
-    x.open('GET', 'https://pwd.razorsedgeconsulting.com/api/getpassword' + query);
-    x.onload = function () {
-        document.getElementById('generatedPwd').innerHTML = x.responseText;
-        copyPasswordToClipboard();
-    };
-    x.send();
+  const minimumLength = parseInt(document.getElementById("pwdLength").value);
+  const addNumbers = document.getElementById("useNumbers").checked;
+  const addSymbols = document.getElementById("addSymbols").checked;
+  const symbols = document.getElementById("symbols").value;
+
+  const generator = new PasswordGenerator(
+    minimumLength,
+    addNumbers,
+    addSymbols,
+    symbols
+  );
+  const password = generator.generate();
+
+  document.getElementById("generatedPwd").innerHTML = password;
+  copyPasswordToClipboard();
 }
 
 function copyPasswordToClipboard() {
-    copyTextToClipboard(document.getElementById('generatedPwd').innerHTML);
+  copyTextToClipboard(document.getElementById("generatedPwd").innerHTML);
 
-    $("#copiedMsg").text("Copied to clipboard!");
+  const copiedMsg = document.getElementById("copiedMsg");
+  copiedMsg.textContent = "Copied to clipboard!";
+  copiedMsg.style.display = "inline";
 
-    $('#copiedMsg').fadeIn(300, function () {
-        setTimeout(function () { $('#copiedMsg').fadeOut('slow'); }, 2000);
-    });
+  setTimeout(function () {
+    copiedMsg.style.display = "none";
+  }, 2000);
 }
 
 async function copyTextToClipboard(text) {
-    await navigator.clipboard.writeText(text);
+  await navigator.clipboard.writeText(text);
 }
 
-//defaults
 UiState = {
-    minimumLength: 13,
-    useNumbers: true,
-    useSymbols: true,
-    symbols: '!@#$%^&*'
-}
+  minimumLength: 13,
+  useNumbers: true,
+  useSymbols: true,
+  symbols: "!@#$%^&*",
+};
 
 function initializeOptions() {
-    chrome.storage.local.get('easyToRememberPwd_UiState', function (result) {
-        if (!jQuery.isEmptyObject(result)) {
-            UiState = JSON.parse(result['easyToRememberPwd_UiState']);
-        } 
+  chrome.storage.local.get("easyToRememberPwd_UiState", function (result) {
+    if (result && Object.keys(result).length > 0) {
+      UiState = JSON.parse(result["easyToRememberPwd_UiState"]);
+    }
 
-        $("#pwdLength").val(UiState.minimumLength);
-        $("#useNumbers").prop('checked', UiState.useNumbers);
-        $("#addSymbols").prop('checked', UiState.useSymbols);
-        $("#symbols").val(UiState.symbols);
+    document.getElementById("pwdLength").value = UiState.minimumLength;
+    document.getElementById("useNumbers").checked = UiState.useNumbers;
+    document.getElementById("addSymbols").checked = UiState.useSymbols;
+    document.getElementById("symbols").value = UiState.symbols;
 
-        generateNewPassword(true);
-    });
+    generateNewPassword();
+  });
 }
-
-document.addEventListener('DOMContentLoaded', function () { 
-    initializeOptions();
-});
